@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Happy Develop</title>
+    <link href="../bootstrap-3.3.7-dist/css/bootstrap.min.css" rel="stylesheet" charset="utf-8" />
+
+    <style>
+        .nav-height{
+            height: 50px;
+        }
+
+        .container-title{
+            height: 95px;
+            margin-bottom: 20px;
+            background-color: #fafbfc;
+            border-bottom: 1px solid #e1e4e8;
+        }
+        .container-title-content{
+            margin-top: -5px;
+        }
+        .able-click{
+            cursor:pointer;
+            color:#5cb85c;
+        }
+
+        .status-success{
+            color:#5cb85c;
+            font-size:18px;
+        }
+
+        .status-fail{
+            color:#d9534f;
+            font-size:18px;
+        }
+
+        .pointer{
+            cursor:pointer
+        }
+    </style>
+</head>
+<body>
+<nav class="navbar navbar-inverse navbar-fixed-top">
+    <!-- We use the fluid option here to avoid overriding the fixed width of a normal container within the narrow content columns. -->
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/happy"><span class="glyphicon glyphicon-home"></span> Home</a>
+        </div>
+    </div>
+</nav>
+<div class="clearfix nav-height"></div>
+<div class="container-fluid container-title">
+    <div class="container-fluid container-title-content">
+        <div class="container">
+            <h1>happy-develop</h1>
+            <p>..............................</p>
+        </div>
+    </div>
+</div>
+<div class="container">
+    <div class="row">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                User List
+                <div class="pull-right label label-default"><span class="glyphicon glyphicon-plus pointer" style="color: #ffffff;" id="add-user"></span></div>
+            </div>
+            <div class="panel-body">
+                <table class="table">
+                    <thead>
+                    <tr>
+                        <th>Status</th>
+                        <th>Username</th>
+                        <th>ShareDir</th>
+                        <th>Target</th>
+                        <th  style="width:200px">Operate</th>
+                    </tr>
+                    </thead>
+                    <tbody id="user-list">
+
+                    </tbody>
+                </table>
+            </div>
+        </div><!-- .panel -->
+    </div><!-- .row -->
+</div><!-- .container-fluid -->
+
+
+<!-- add user modal -->
+<div class="modal fade" id="add-user-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel">Modal title</h4>
+            </div>
+            <div class="modal-body">
+                <div>
+                    <div class="form-group">
+                        <label>username</label>
+                        <input type="text" name="username" class="form-control" placeholder="username" />
+                    </div>
+                    <div class="form-group">
+                        <label>password</label>
+                        <input type="text" name="password" class="form-control" placeholder="password" />
+                    </div>
+                    <div class="form-group">
+                        <label>shareDir</label>
+                        <input type="text" name="shareDir" class="form-control" placeholder="share-dir" />
+                    </div>
+                    <div id="add-user-warn"></div>
+                </div>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" id="add-user-save">Save</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- confirm modal -->
+<div class="modal fade" id="confirm-model" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
+    <div class="modal-dialog modal-sm" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <h4 class="modal-title" id="myModalLabel2">Confirm</h4>
+            </div>
+            <div class="modal-body" id="confirm-content">
+                Confirm .....
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default btn-sm" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-danger btn-sm" data-url="" id="confirm-button">Confirm</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+<script src="../jquery/jquery-2.2.3.min.js"></script>
+<script src="../bootstrap-3.3.7-dist/js/bootstrap.min.js"></script>
+<script src="../happy-dev.js"></script>
+<script>
+
+</script>
+</html>
